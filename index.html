@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="it">
 <head>
+<!-- Google Ads tag for PelucheIdea -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18101836708"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18101836708');
+</script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Peluche personalizzati su misura per aziende | PelucheIdea</title>
 <meta name="description" content="Realizziamo peluche personalizzati da disegni, loghi e idee: progetto, prototipo e produzione su misura. Ordine minimo 500 pezzi. Richiedi un preventivo.">
@@ -808,6 +816,9 @@ async function handleQuoteSubmit(event){
       body:JSON.stringify(data)
     });
     if(!response.ok) throw new Error('Invio non riuscito');
+    if(typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-18101836708/qlWWCJCX84YdEKS30LdD'});
+    }
     form.hidden=true;
     success.hidden=false;
     success.scrollIntoView({behavior:'smooth',block:'center'});
