@@ -287,7 +287,7 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
 .quote-success h2{margin:8px 0 12px;font-size:50px}
 .quote-success p{max-width:620px;margin:0 auto;color:var(--muted);font-size:18px;line-height:1.65}
 .success-note{max-width:620px;margin:18px auto 24px;padding:14px 18px;border-radius:16px;background:#faf7ff;color:#6f6277;font-size:14px;line-height:1.55}
-</style>
+.whatsapp-float{position:fixed;right:94px;bottom:22px;width:62px;height:62px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;z-index:101;box-shadow:0 14px 30px rgba(22,110,61,.25);transition:transform .2s,background .2s}.whatsapp-float:hover{transform:translateY(-3px) scale(1.03);background:#1fb958}.whatsapp-float:focus-visible{outline:3px solid #1b7751;outline-offset:3px}.whatsapp-float svg{display:block}</style>
 </head>
 <body>
 <header><div class="wrap nav"><a class="logo" href="#top">Peluche<span>Idea</span></a><nav>
@@ -469,6 +469,7 @@ function setStart(value){
 }
 </script>
 
+<a class="whatsapp-float" href="https://wa.me/393793689420" target="_blank" rel="noopener noreferrer" aria-label="Scrivici su WhatsApp al 379 368 9420" title="Scrivici su WhatsApp"><svg viewBox="0 0 24 24" width="31" height="31" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.6 11.6 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L0 24l6.5-1.7c1.7.9 3.6 1.4 5.6 1.4 6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.4-8.4ZM12.1 21.7c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.3-.4a9.6 9.6 0 1 1 8.6 4.8Zm5.3-7.2c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5H8c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.5-.4Z"/></svg></a>
 <button class="chat-button" id="chatButton" aria-label="Apri chat">💬</button>
 
 <div class="chat-panel" id="chatPanel" aria-hidden="true">
