@@ -287,7 +287,7 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
 .quote-success h2{margin:8px 0 12px;font-size:50px}
 .quote-success p{max-width:620px;margin:0 auto;color:var(--muted);font-size:18px;line-height:1.65}
 .success-note{max-width:620px;margin:18px auto 24px;padding:14px 18px;border-radius:16px;background:#faf7ff;color:#6f6277;font-size:14px;line-height:1.55}
-.whatsapp-float{position:fixed;right:94px;bottom:22px;width:62px;height:62px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;z-index:101;box-shadow:0 14px 30px rgba(22,110,61,.25);transition:transform .2s,background .2s}.whatsapp-float:hover{transform:translateY(-3px) scale(1.03);background:#1fb958}.whatsapp-float:focus-visible{outline:3px solid #1b7751;outline-offset:3px}.whatsapp-float svg{display:block}</style>
+.whatsapp-float{position:fixed;right:94px;bottom:22px;width:62px;height:62px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;z-index:101;box-shadow:0 14px 30px rgba(22,110,61,.25);transition:transform .2s,background .2s}.whatsapp-float:hover{transform:translateY(-3px) scale(1.03);background:#1fb958}.whatsapp-float:focus-visible{outline:3px solid #1b7751;outline-offset:3px}.whatsapp-float svg{display:block}.upload-note{margin:0;color:var(--muted);font-size:14px;line-height:1.45}.upload-error{margin:0;color:#b52444;font-size:14px;font-weight:700}.field input[type=file]{width:100%;font-size:14px;background:#fff}.field input[type=file]::file-selector-button{border:0;background:#fff0f6;color:#a72560;border-radius:9px;padding:8px 12px;margin-right:10px;font:700 14px Nunito,sans-serif;cursor:pointer}</style>
 </head>
 <body>
 <header><div class="wrap nav"><a class="logo" href="#top">Peluche<span>Idea</span></a><nav>
@@ -454,10 +454,11 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
 </section>
 
 
-<section class="form-section" id="preventivo"><div class="wrap"><div class="section-head"><div><div class="kicker">Richiedi un preventivo</div><h2>Raccontaci cosa hai in mente.</h2></div></div><form class="formbox" id="quoteForm" onsubmit="handleQuoteSubmit(event)">
+<section class="form-section" id="preventivo"><div class="wrap"><div class="section-head"><div><div class="kicker">Richiedi un preventivo</div><h2>Raccontaci cosa hai in mente.</h2></div></div><form class="formbox" id="quoteForm" action="https://formsubmit.co/pelucheidea@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="return validateQuoteFiles()">
   <input type="hidden" name="_subject" value="Nuova richiesta preventivo — PelucheIdea">
   <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false"><div class="formgrid"><div class="field"><label>Nome</label><input required name="nome" placeholder="Il tuo nome"></div><div class="field"><label>Email</label><input required type="email" name="email" placeholder="nome@azienda.it"></div><div class="field"><label>Da dove parti?</label><select id="startType" name="da_dove_parti"><option value="">Scegli il tuo punto di partenza</option><option>Ho già il progetto</option><option>Ho già il progetto - voglio richiedere direttamente il prototipo</option><option>Ho solo una bozza</option><option>Ho una foto e un&#39;idea</option></select></div><div class="field"><label>Tipo di prodotto</label><select name="tipo_prodotto"><option>Peluche personalizzato</option><option>Mascotte</option><option>Sculture in polistirolo</option><option>Non lo so ancora</option></select></div><div class="field full"><label>Raccontaci quello che hai</label><textarea name="messaggio" placeholder="Puoi descrivere il progetto, spiegare la bozza oppure raccontarci l&#39;idea che hai in mente..."></textarea></div><div class="field full"><button class="btn primary" type="submit">Invia richiesta</button></div></div></form><div class="formbox quote-success" id="quoteSuccess" hidden><div class="success-icon">✓</div><div class="kicker">Richiesta inviata</div><h2>Grazie!</h2><p>Abbiamo ricevuto la tua richiesta. Appena possibile ti contatteremo per parlare del tuo progetto e dei prossimi passi.</p><div class="success-note">Controlla anche la tua email: potremmo ricontattarti lì per avere qualche dettaglio in più.</div><button class="btn secondary" type="button" onclick="resetQuoteForm()">Invia un&#39;altra richiesta</button></div></div></section>
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://pelucheidea.com/?inviato=1#preventivo"><div class="formgrid"><div class="field"><label>Nome</label><input required name="nome" placeholder="Il tuo nome"></div><div class="field"><label>Email</label><input required type="email" name="email" placeholder="nome@azienda.it"></div><div class="field"><label>Da dove parti?</label><select id="startType" name="da_dove_parti"><option value="">Scegli il tuo punto di partenza</option><option>Ho già il progetto</option><option>Ho già il progetto - voglio richiedere direttamente il prototipo</option><option>Ho solo una bozza</option><option>Ho una foto e un&#39;idea</option></select></div><div class="field"><label>Tipo di prodotto</label><select name="tipo_prodotto"><option>Peluche personalizzato</option><option>Mascotte</option><option>Sculture in polistirolo</option><option>Non lo so ancora</option></select></div><div class="field full"><label>Raccontaci quello che hai</label><textarea name="messaggio" placeholder="Puoi descrivere il progetto, spiegare la bozza oppure raccontarci l&#39;idea che hai in mente..."></textarea></div><div class="field"><label for="allegatoFoto">Foto o disegno (facoltativo)</label><input id="allegatoFoto" type="file" name="foto_progetto" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field"><label for="allegatoProgetto">Secondo allegato (facoltativo)</label><input id="allegatoProgetto" type="file" name="altro_allegato" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field full"><p class="upload-note">Puoi allegare immagini JPG, PNG, WebP o un PDF. Dimensione massima complessiva: 10 MB.</p><p id="uploadError" class="upload-error" role="alert" hidden></p></div><div class="field full"><button class="btn primary" type="submit">Invia richiesta</button></div></div></form><div class="formbox quote-success" id="quoteSuccess" hidden><div class="success-icon">✓</div><div class="kicker">Richiesta inviata</div><h2>Grazie!</h2><p>Abbiamo ricevuto la tua richiesta. Appena possibile ti contatteremo per parlare del tuo progetto e dei prossimi passi.</p><div class="success-note">Controlla anche la tua email: potremmo ricontattarti lì per avere qualche dettaglio in più.</div><button class="btn secondary" type="button" onclick="resetQuoteForm()">Invia un&#39;altra richiesta</button></div></div></section>
 </main><footer><div class="wrap foot"><div><strong style="font-family:'Baloo 2';font-size:20px">PelucheIdea</strong> — La tua idea. Un peluche vero. <a href="/peluche-personalizzati/">Peluche</a> · <a href="/mascotte-personalizzate/">Mascotte</a> · <a href="/prototipo-peluche/">Prototipo</a></div><div>© 2026 PelucheIdea · <a href="mailto:pelucheidea@gmail.com" style="color:inherit;text-decoration:none">pelucheidea@gmail.com</a> · <a href="tel:+393793689420" style="color:inherit;text-decoration:none" aria-label="Chiama PelucheIdea al 379 368 9420">379 368 9420</a> · Tutti i diritti riservati</div></div></footer>
 
 <script>
@@ -801,33 +802,33 @@ function setStart(value){
 </script>
 
 <script>
-async function handleQuoteSubmit(event){
-  event.preventDefault();
+function validateQuoteFiles(){
+  const form=document.getElementById('quoteForm');
+  const error=document.getElementById('uploadError');
+  const files=[...form.querySelectorAll('input[type="file"]')].flatMap(input=>[...input.files]);
+  const total=files.reduce((sum,file)=>sum+file.size,0);
+  if(total>10*1024*1024){
+    error.textContent='Gli allegati superano 10 MB. Scegli file più piccoli e riprova.';
+    error.hidden=false;
+    error.scrollIntoView({behavior:'smooth',block:'center'});
+    return false;
+  }
+  error.hidden=true;
+  const submitBtn=form.querySelector('button[type="submit"]');
+  submitBtn.disabled=true;
+  submitBtn.textContent='Invio in corso…';
+  return true;
+}
+(function showQuoteSuccess(){
+  if(new URLSearchParams(window.location.search).get('inviato')!=='1') return;
   const form=document.getElementById('quoteForm');
   const success=document.getElementById('quoteSuccess');
   if(!form||!success) return;
-  const submitBtn=form.querySelector('button[type="submit"]');
-  if(submitBtn){ submitBtn.disabled=true; submitBtn.textContent='Invio in corso…'; }
-  try{
-    const data={};
-    new FormData(form).forEach((value,key)=>data[key]=value);
-    const response=await fetch('https://formsubmit.co/ajax/pelucheidea@gmail.com',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(data)
-    });
-    if(!response.ok) throw new Error('Invio non riuscito');
-    if(typeof gtag === 'function') {
-      gtag('event', 'conversion', {'send_to': 'AW-18101836708/qlWWCJCX84YdEKS30LdD'});
-    }
-    form.hidden=true;
-    success.hidden=false;
-    success.scrollIntoView({behavior:'smooth',block:'center'});
-  }catch(error){
-    if(submitBtn){ submitBtn.disabled=false; submitBtn.textContent='Invia richiesta'; }
-    alert('Non è stato possibile inviare la richiesta. Riprova tra poco o scrivici a pelucheidea@gmail.com');
-  }
-}
+  form.hidden=true;
+  success.hidden=false;
+  if(typeof gtag==='function') gtag('event','conversion',{'send_to':'AW-18101836708/qlWWCJCX84YdEKS30LdD'});
+  history.replaceState(null,'',window.location.pathname+'#preventivo');
+})();
 function resetQuoteForm(){
   const form=document.getElementById('quoteForm');
   const success=document.getElementById('quoteSuccess');
