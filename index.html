@@ -2,12 +2,23 @@
 <html lang="it">
 <head>
 <!-- Google Ads tag for PelucheIdea -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18101836708"></script>
 <script>
+  // Il tag pubblicitario viene caricato solo dopo una scelta esplicita.
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18101836708');
+  gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+  function enablePelucheTracking(){
+    if(window.pelucheTrackingEnabled) return;
+    window.pelucheTrackingEnabled=true;
+    gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'denied',analytics_storage:'denied'});
+    gtag('js',new Date());
+    gtag('config','AW-18101836708');
+    var script=document.createElement('script');
+    script.async=true;
+    script.src='https://www.googletagmanager.com/gtag/js?id=AW-18101836708';
+    document.head.appendChild(script);
+  }
+  try { if(localStorage.getItem('peluche_tracking_choice')==='accepted') enablePelucheTracking(); } catch(e) {}
 </script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Peluche personalizzati su misura per aziende | PelucheIdea</title>
@@ -291,7 +302,14 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
 .whatsapp-float{position:fixed;right:94px;bottom:22px;width:62px;height:62px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;z-index:101;box-shadow:0 14px 30px rgba(22,110,61,.25);transition:transform .2s,background .2s}.whatsapp-float:hover{transform:translateY(-3px) scale(1.03);background:#1fb958}.whatsapp-float:focus-visible{outline:3px solid #1b7751;outline-offset:3px}.whatsapp-float svg{display:block}.upload-note{margin:0;color:var(--muted);font-size:14px;line-height:1.45}.upload-error{margin:0;color:#b52444;font-size:14px;font-weight:700}.field input[type=file]{width:100%;font-size:14px;background:#fff}.field input[type=file]::file-selector-button{border:0;background:#fff0f6;color:#a72560;border-radius:9px;padding:8px 12px;margin-right:10px;font:700 14px Nunito,sans-serif;cursor:pointer}.minimum-order{display:flex;align-items:center;gap:14px;max-width:510px;margin-top:22px;padding:15px 19px;background:#fff;border:2px solid var(--pink);border-radius:18px;box-shadow:0 12px 28px rgba(255,92,147,.16);color:var(--ink)}.minimum-order .minimum-icon{font-size:27px;line-height:1}.minimum-order strong{display:block;color:#d92e70;font:800 clamp(21px,2.2vw,27px)/1.1 'Baloo 2',sans-serif}.minimum-order .minimum-detail{display:block;margin-top:2px;font-size:14px;line-height:1.35;color:#554b60}.minimum-reminder{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;max-width:850px;margin:0 auto 18px;padding:15px 20px;border-radius:16px;background:#fff0f6;border:2px solid #f4a0bf;text-align:center}.minimum-reminder strong{font-size:18px;color:#9d2256}.minimum-reminder span{font-size:14px;color:#4f4555}
 .minimum-dialog{border:0;border-radius:24px;padding:28px;width:calc(100% - 32px);max-width:480px;color:#29253d;box-shadow:0 24px 80px #29253d40;font-family:Nunito,sans-serif}.minimum-dialog::backdrop{background:#29253d88;backdrop-filter:blur(4px)}.minimum-dialog h2{font-size:32px;line-height:1.1;margin:0 0 16px}.minimum-dialog .order-warning{background:#d60068;color:#fff;border-radius:16px;padding:20px;font-size:18px;line-height:1.5}.minimum-dialog .order-warning strong{display:block;font-size:25px}.minimum-dialog p{font-size:16px;line-height:1.5}.minimum-dialog-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.minimum-dialog-actions button{font:800 15px Nunito,sans-serif;border-radius:12px;padding:13px 16px;cursor:pointer}.minimum-dialog-confirm{background:#d60068;color:#fff;border:2px solid #d60068}.minimum-dialog-back{background:#fff;color:#554b60;border:2px solid #e6dce4}
 </style>
-<style>header .nav{height:auto;min-height:78px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}header nav{gap:16px;flex-wrap:wrap}header .logo,header .navcta{flex-shrink:0}.story-teaser{background:#fff5fa;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.story-teaser .wrap{padding-top:28px;padding-bottom:28px;max-width:900px}.story-teaser h2{font-size:30px;margin:0 0 10px}.story-teaser p{color:var(--muted);line-height:1.65}.story-teaser a{color:#73378b;font-weight:800;text-decoration:underline;text-underline-offset:4px}</style></head>
+<style>header .nav{height:auto;min-height:78px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}header nav{gap:16px;flex-wrap:wrap}header .logo,header .navcta{flex-shrink:0}.story-teaser{background:#fff5fa;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.story-teaser .wrap{padding-top:28px;padding-bottom:28px;max-width:900px}.story-teaser h2{font-size:30px;margin:0 0 10px}.story-teaser p{color:var(--muted);line-height:1.65}.story-teaser a{color:#73378b;font-weight:800;text-decoration:underline;text-underline-offset:4px}</style><style id="peluche-privacy-styles">
+.privacy-note{margin:0;color:#554b60;font-size:14px;line-height:1.55}.privacy-note a,.privacy-banner a{color:#7e2767;text-decoration:underline;text-underline-offset:2px}
+.privacy-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:300;max-width:820px;margin:auto;padding:19px 22px;border:1px solid #e8dce8;border-radius:18px;background:#fff;box-shadow:0 18px 55px #29253d33;font:14px/1.5 Nunito,sans-serif;color:#29253d}
+.privacy-banner[hidden]{display:none}.privacy-banner strong{font-size:17px}.privacy-banner p{margin:7px 0 13px}.privacy-actions{display:flex;gap:10px;flex-wrap:wrap}
+.privacy-actions button,.privacy-settings{font:800 14px Nunito,sans-serif;border-radius:10px;padding:9px 15px;cursor:pointer}.privacy-actions button{border:2px solid #d60068}.privacy-accept{background:#d60068;color:#fff}.privacy-reject{background:#fff;color:#9d2256}
+.privacy-settings{border:0;background:none;color:#6f2864;text-decoration:underline;padding:5px}
+@media(max-width:560px){.privacy-banner{left:10px;right:10px;bottom:10px;padding:15px}}
+</style></head>
 <body>
 <header><div class="wrap nav"><a class="logo" href="#top">Peluche<span>Idea</span></a><nav>
   <button class="nav-start-btn" id="openStartChooser" type="button">Da dove parti? <span>⌄</span></button>
@@ -462,8 +480,27 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
   <input type="hidden" name="_subject" value="Nuova richiesta preventivo — PelucheIdea">
   <input type="hidden" name="_template" value="table">
   <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://pelucheidea.com/?inviato=1#preventivo"><div class="formgrid"><div class="field"><label>Nome</label><input required name="nome" placeholder="Il tuo nome"></div><div class="field"><label>Email</label><input required type="email" name="email" placeholder="nome@azienda.it"></div><div class="field"><label>Da dove parti?</label><select id="startType" name="da_dove_parti"><option value="">Scegli il tuo punto di partenza</option><option>Ho già il progetto</option><option>Ho già il progetto - voglio richiedere direttamente il prototipo</option><option>Ho solo una bozza</option><option>Ho una foto e un&#39;idea</option></select></div><div class="field"><label>Tipo di prodotto</label><select name="tipo_prodotto"><option>Peluche personalizzato</option><option>Mascotte</option><option>Sculture in polistirolo</option><option>Non lo so ancora</option></select></div><div class="field full"><label>Raccontaci quello che hai</label><textarea name="messaggio" placeholder="Puoi descrivere il progetto, spiegare la bozza oppure raccontarci l&#39;idea che hai in mente..."></textarea></div><div class="field"><label for="allegatoFoto">Foto o disegno (facoltativo)</label><input id="allegatoFoto" type="file" name="attachment" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field"><label for="allegatoProgetto">Secondo allegato (facoltativo)</label><input id="allegatoProgetto" type="file" name="attachment2" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field full"><p class="upload-note">Puoi allegare immagini JPG, PNG, WebP o un PDF. Dimensione massima complessiva: 10 MB. Per file più grandi, <a href="https://wa.me/393793689420" target="_blank" rel="noopener noreferrer">scrivici su WhatsApp</a>.</p><p id="uploadError" class="upload-error" role="alert" hidden></p></div><div class="field full"><button class="btn primary" type="submit">Invia richiesta</button></div></div></form><div class="formbox quote-success" id="quoteSuccess" hidden><div class="success-icon">✓</div><div class="kicker">Richiesta inviata</div><h2>Grazie!</h2><p>Abbiamo ricevuto la tua richiesta. Appena possibile ti contatteremo per parlare del tuo progetto e dei prossimi passi.</p><div class="success-note">Controlla anche la tua email: potremmo ricontattarti lì per avere qualche dettaglio in più.</div><button class="btn secondary" type="button" onclick="resetQuoteForm()">Invia un&#39;altra richiesta</button></div></div></section>
-</main><footer><div class="wrap foot"><div><strong style="font-family:'Baloo 2';font-size:20px">PelucheIdea</strong> — La tua idea. Un peluche vero. <a href="/peluche-personalizzati/">Peluche</a> · <a href="/mascotte-personalizzate/">Mascotte</a> · <a href="/prototipo-peluche/">Prototipo</a> · <a href="/la-nostra-storia/">La nostra storia</a></div><div>© 2026 PelucheIdea · <a href="mailto:pelucheidea@gmail.com" style="color:inherit;text-decoration:none">pelucheidea@gmail.com</a> · <a href="tel:+393793689420" style="color:inherit;text-decoration:none" aria-label="Chiama PelucheIdea al 379 368 9420">379 368 9420</a> · Tutti i diritti riservati</div></div></footer>
+  <input type="hidden" name="_next" value="https://pelucheidea.com/?inviato=1#preventivo"><div class="formgrid"><div class="field"><label>Nome</label><input required name="nome" placeholder="Il tuo nome"></div><div class="field"><label>Email</label><input required type="email" name="email" placeholder="nome@azienda.it"></div><div class="field"><label>Da dove parti?</label><select id="startType" name="da_dove_parti"><option value="">Scegli il tuo punto di partenza</option><option>Ho già il progetto</option><option>Ho già il progetto - voglio richiedere direttamente il prototipo</option><option>Ho solo una bozza</option><option>Ho una foto e un&#39;idea</option></select></div><div class="field"><label>Tipo di prodotto</label><select name="tipo_prodotto"><option>Peluche personalizzato</option><option>Mascotte</option><option>Sculture in polistirolo</option><option>Non lo so ancora</option></select></div><div class="field full"><label>Raccontaci quello che hai</label><textarea name="messaggio" placeholder="Puoi descrivere il progetto, spiegare la bozza oppure raccontarci l&#39;idea che hai in mente..."></textarea></div><div class="field"><label for="allegatoFoto">Foto o disegno (facoltativo)</label><input id="allegatoFoto" type="file" name="attachment" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field"><label for="allegatoProgetto">Secondo allegato (facoltativo)</label><input id="allegatoProgetto" type="file" name="attachment2" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field full"><p class="upload-note">Puoi allegare immagini JPG, PNG, WebP o un PDF. Dimensione massima complessiva: 10 MB. Per file più grandi, <a href="https://wa.me/393793689420" target="_blank" rel="noopener noreferrer">scrivici su WhatsApp</a>.</p><p id="uploadError" class="upload-error" role="alert" hidden></p></div><div class="field full"><p class="privacy-note">Nome, email, descrizione ed eventuali allegati sono trasmessi tramite <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit</a> a PelucheIdea per rispondere alla tua richiesta di preventivo; non sono usati per newsletter. Non inserire dati sensibili. Per informazioni o richieste sui tuoi dati scrivi a <a href="mailto:pelucheidea@gmail.com">pelucheidea@gmail.com</a>.</p></div><div class="field full"><button class="btn primary" type="submit">Invia richiesta</button></div></div></form><div class="formbox quote-success" id="quoteSuccess" hidden><div class="success-icon">✓</div><div class="kicker">Richiesta inviata</div><h2>Grazie!</h2><p>Abbiamo ricevuto la tua richiesta. Appena possibile ti contatteremo per parlare del tuo progetto e dei prossimi passi.</p><div class="success-note">Controlla anche la tua email: potremmo ricontattarti lì per avere qualche dettaglio in più.</div><button class="btn secondary" type="button" onclick="resetQuoteForm()">Invia un&#39;altra richiesta</button></div></div></section>
+</main><footer><div class="wrap foot"><div><strong style="font-family:'Baloo 2';font-size:20px">PelucheIdea</strong> — La tua idea. Un peluche vero. <a href="/peluche-personalizzati/">Peluche</a> · <a href="/mascotte-personalizzate/">Mascotte</a> · <a href="/prototipo-peluche/">Prototipo</a> · <a href="/la-nostra-storia/">La nostra storia</a></div><div>© 2026 PelucheIdea · <a href="mailto:pelucheidea@gmail.com" style="color:inherit;text-decoration:none">pelucheidea@gmail.com</a> · <a href="tel:+393793689420" style="color:inherit;text-decoration:none" aria-label="Chiama PelucheIdea al 379 368 9420">379 368 9420</a> · Tutti i diritti riservati</div></div></footer><div class="privacy-banner" id="privacyBanner" role="region" aria-label="Scelta per il tracciamento" hidden><strong>Tracciamento pubblicitario</strong><p>Con il tuo permesso usiamo il tag Google Ads per misurare le visite e le richieste dal sito. Se rifiuti, il tag non viene caricato. Puoi cambiare scelta in qualsiasi momento. <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Come Google usa i dati</a>.</p><div class="privacy-actions"><button type="button" class="privacy-reject" data-privacy-choice="rejected">Rifiuta</button><button type="button" class="privacy-accept" data-privacy-choice="accepted">Accetta</button></div></div><script>
+(function(){
+  var banner=document.getElementById('privacyBanner');
+  var setting=document.createElement('button');
+  setting.type='button';setting.className='privacy-settings';setting.textContent='Preferenze cookie';
+  document.querySelector('footer .foot').appendChild(setting);
+  function choice(){try{return localStorage.getItem('peluche_tracking_choice')}catch(e){return null}}
+  if(!choice()) banner.hidden=false;
+  setting.addEventListener('click',function(){banner.hidden=false});
+  banner.querySelectorAll('[data-privacy-choice]').forEach(function(button){
+    button.addEventListener('click',function(){
+      var selected=button.getAttribute('data-privacy-choice');
+      try{localStorage.setItem('peluche_tracking_choice',selected)}catch(e){}
+      banner.hidden=true;
+      if(selected==='accepted') enablePelucheTracking();
+      else if(window.pelucheTrackingEnabled){gtag('consent','update',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});window.location.reload()}
+    });
+  });
+})();
+</script>
 
 <script>
 function setStart(value){
@@ -874,16 +911,19 @@ function validateQuoteFiles(){
   const submitBtn=form.querySelector('button[type="submit"]');
   submitBtn.disabled=true;
   submitBtn.textContent='Invio in corso…';
+  try{sessionStorage.setItem('peluche_quote_pending','1')}catch(e){}
   return true;
 }
 (function showQuoteSuccess(){
   if(new URLSearchParams(window.location.search).get('inviato')!=='1') return;
+  var pending=false;try{pending=sessionStorage.getItem('peluche_quote_pending')==='1';sessionStorage.removeItem('peluche_quote_pending')}catch(e){}
+  if(!pending){history.replaceState(null,'',window.location.pathname+'#preventivo');return;}
   const form=document.getElementById('quoteForm');
   const success=document.getElementById('quoteSuccess');
   if(!form||!success) return;
   form.hidden=true;
   success.hidden=false;
-  if(typeof gtag==='function') gtag('event','conversion',{'send_to':'AW-18101836708/qlWWCJCX84YdEKS30LdD'});
+  if(window.pelucheTrackingEnabled) gtag('event','conversion',{'send_to':'AW-18101836708/qlWWCJCX84YdEKS30LdD'});
   history.replaceState(null,'',window.location.pathname+'#preventivo');
 })();
 function resetQuoteForm(){
