@@ -309,15 +309,38 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
 .privacy-actions button,.privacy-settings{font:800 14px Nunito,sans-serif;border-radius:10px;padding:9px 15px;cursor:pointer}.privacy-actions button{border:2px solid #d60068}.privacy-accept{background:#d60068;color:#fff}.privacy-reject{background:#fff;color:#9d2256}
 .privacy-settings{border:0;background:none;color:#6f2864;text-decoration:underline;padding:5px}
 @media(max-width:560px){.privacy-banner{left:10px;right:10px;bottom:10px;padding:15px}}
-</style></head>
+</style><style>
+.mobile-menu-toggle{display:none;align-items:center;gap:8px;border:1px solid #e8e1ea;border-radius:999px;background:#fff;color:#29253d;padding:10px 13px;font:800 13px 'Nunito',sans-serif;cursor:pointer}
+.primary,.navcta{color:#29253d}
+.kicker{color:#a92d5c}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #3c3470;outline-offset:3px}
+.faq-section{background:linear-gradient(180deg,#fff 0%,#fff8f3 100%)}
+.faq-list{display:grid;gap:12px;max-width:900px}
+.faq-item{background:#fff;border:1px solid #e9e2eb;border-radius:18px;padding:0 20px;box-shadow:0 8px 22px rgba(72,45,103,.045)}
+.faq-item summary{position:relative;cursor:pointer;list-style:none;padding:19px 38px 19px 0;font-weight:800;color:#29253d}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:after{content:'+';position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:23px;color:#a92d5c}
+.faq-item[open] summary:after{content:'−'}
+.faq-item p{margin:0;padding:0 0 19px;color:#514b61;line-height:1.7}
+.quote-guidance{max-width:850px;margin:-12px auto 24px;color:#514b61;line-height:1.65}
+@media(max-width:850px){
+ .nav{position:relative}
+ .mobile-menu-toggle{display:flex}
+ header .nav nav{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;z-index:30;flex-direction:column;align-items:stretch;gap:4px;padding:12px;background:#fff;border:1px solid #e9e2eb;border-radius:0 0 18px 18px;box-shadow:0 16px 28px rgba(41,37,61,.13)}
+ header .nav.mobile-open nav{display:flex}
+ header .nav nav a,header .nav nav button{text-align:left;padding:12px 14px;border-radius:10px}
+}
+@media(max-width:560px){.mobile-menu-toggle{padding:10px 11px}.mobile-menu-toggle span:first-child{display:none}.quote-guidance{margin-top:-10px}}
+</style>
+</head>
 <body>
-<header><div class="wrap nav"><a class="logo" href="#top">Peluche<span>Idea</span></a><nav>
+<header><div class="wrap nav"><a class="logo" href="#top">Peluche<span>Idea</span></a><nav id="primaryNav" aria-label="Navigazione principale">
   <button class="nav-start-btn" id="openStartChooser" type="button">Da dove parti? <span>⌄</span></button>
   <a href="/peluche-personalizzati/">Peluche personalizzati</a><a href="/mascotte-personalizzate/">Mascotte</a>
   <a href="/prototipo-peluche/">Prototipo</a>
   <button class="nav-start-btn" type="button" data-page-modal="sicurezzaModal">Sicurezza <span>⌄</span></button>
   <button class="nav-start-btn" type="button" data-page-modal="portfolioModal">Portfolio <span>⌄</span></button>
-<a href="/la-nostra-storia/">La nostra storia</a></nav><a class="navcta" href="#preventivo">Parliamone</a></div></header>
+<a href="/la-nostra-storia/">La nostra storia</a></nav><button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Apri menu"><span>Menu</span><span aria-hidden="true">☰</span></button><a class="navcta" href="#preventivo">Parliamone</a></div></header>
 <main id="top">
 
 
@@ -388,6 +411,22 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
 
 <section class="story-teaser" aria-labelledby="storyTeaserTitle"><div class="wrap"><h2 id="storyTeaserTitle">Dalle mascotte ai peluche: la nostra storia</h2><p>PelucheIdea nasce dall’esperienza nel mondo delle mascotte e dalla voglia di trasformare personaggi e idee in prodotti da abbracciare.</p><a href="/la-nostra-storia/">Scopri chi siamo →</a></div></section><section id="prodotti"><div class="wrap"><div class="section-head"><div><div class="kicker">Cosa realizziamo</div><h2>Da qui, costruiamo il tuo prodotto.</h2></div><p class="lead">Un unico partner per creare prodotti personalizzati destinati a brand, aziende, eventi e progetti speciali.</p></div><div class="cards"><article class="card"><div class="icon pink">🧸</div><h3><a href="/peluche-personalizzati/">Peluche personalizzati</a></h3><p>Il tuo personaggio prende forma in un peluche progettato su misura, con dimensioni e dettagli concordati insieme.</p><a href="/peluche-personalizzati/" aria-label="Scopri i peluche personalizzati">Scopri il servizio →</a></article><article class="card"><div class="icon orange">🎭</div><h3><a href="/mascotte-personalizzate/">Mascotte personalizzate</a></h3><p>Trasformiamo logo e identità visiva in una mascotte riconoscibile per eventi, fiere, attività e promozione.</p><a href="/mascotte-personalizzate/" aria-label="Scopri le mascotte personalizzate">Scopri il servizio →</a></article></div></div></section>
 <section class="process" id="processo"><div class="wrap"><div class="section-head"><div><div class="kicker">Come funziona</div><h2>Il percorso cambia in base a ciò che hai già.</h2></div></div><div class="steps"><div class="step"><div class="num">01</div><h3>Ci racconti l'idea</h3><p>Partiamo dal tuo progetto, dalla tua bozza oppure da una foto e da un'idea.</p></div><div class="step"><div class="num">02</div><h3>Progettiamo</h3><p>Studiamo forme, materiali, dimensioni e dettagli del prodotto.</p></div><div class="step"><div class="num">03</div><h3>Realizziamo</h3><p>Prepariamo il prototipo e passiamo alla produzione dopo la tua approvazione.</p></div><div class="step"><div class="num">04</div><h3>Consegniamo</h3><p>Il prodotto finito arriva direttamente da te, in Italia e all'estero.</p></div></div></div></section>
+<section class="faq-section" id="domande-frequenti">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">Prima di iniziare</div><h2>Risposte chiare, prima del preventivo.</h2>
+      <p class="lead">Per una proposta realistica valutiamo insieme caratteristiche, quantità e utilizzo del progetto.</p></div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Qual è il minimo d'ordine per un peluche personalizzato?</summary><p>Per la produzione di peluche personalizzati il minimo è di 500 pezzi. Non realizziamo pezzi singoli. Puoi richiedere un prototipo a pagamento prima di decidere se avviare la produzione.</p></details>
+      <details class="faq-item"><summary>Posso valutare un campione prima della produzione?</summary><p>Sì. Il prototipo è a pagamento e ti permette di valutare il modello fisico. La produzione viene avviata solo dopo la tua approvazione e dopo aver definito gli accordi del progetto.</p></details>
+      <details class="faq-item"><summary>Posso partire da una bozza o da una semplice idea?</summary><p>Sì. Puoi inviarci un disegno, una foto o una descrizione: partiamo dal materiale che hai e definiamo insieme i dettagli utili a sviluppare il progetto.</p></details>
+      <details class="faq-item"><summary>Che informazioni servono per ricevere una valutazione?</summary><p>Aiutano il soggetto o il logo, le dimensioni indicative, la quantità prevista, l'utilizzo, l'eventuale fascia d'età se il prodotto è destinato al gioco e la data entro cui ti serve. Puoi allegare immagini o un PDF al modulo.</p></details>
+      <details class="faq-item"><summary>Il minimo di 500 pezzi vale anche per mascotte e sculture?</summary><p>Il minimo di 500 pezzi riguarda la produzione dei peluche personalizzati. Mascotte e sculture in polistirolo seguono un percorso e un preventivo separati.</p></details>
+      <details class="faq-item"><summary>Come vengono definiti costi e tempi?</summary><p>Dipendono da dimensioni, dettagli, materiali, quantità e utilizzo. Dopo aver esaminato le informazioni del progetto, definiamo la proposta e le tempistiche specifiche prima di procedere.</p></details>
+    </div>
+  </div>
+</section>
 
 <section class="safety-section" id="sicurezza">
   <div class="wrap">
@@ -440,7 +479,7 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
 
     <div class="compact-gallery">
       <article class="compact-card">
-        <div class="compact-art photo-art"><img src="/assets/images/peluche-con-logo.webp" alt="Peluche personalizzato con logo" loading="eager" width="881" height="887" decoding="async"></div>
+        <div class="compact-art photo-art"><img src="/assets/images/peluche-con-logo.webp" alt="Peluche personalizzato con logo" loading="lazy" width="881" height="887" decoding="async"></div>
         <div class="compact-copy">
           <h3>Personaggi</h3>
           <p>Dal disegno al peluche.</p>
@@ -448,7 +487,7 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
       </article>
 
       <article class="compact-card">
-        <div class="compact-art photo-art"><img src="/assets/images/mascotte-con-logo.webp" alt="Mascotte personalizzata con logo" loading="eager" width="881" height="887" decoding="async"></div>
+        <div class="compact-art photo-art"><img src="/assets/images/mascotte-con-logo.webp" alt="Mascotte personalizzata con logo" loading="lazy" width="881" height="887" decoding="async"></div>
         <div class="compact-copy">
           <h3>Mascotte</h3>
           <p>Il tuo personaggio in versione 3D.</p>
@@ -457,7 +496,7 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
 
       <article class="compact-card special-mini">
         <div class="compact-photo">
-          <img src="/assets/images/scultura-polistirolo.webp" alt="Scultura in polistirolo realizzata su misura" loading="eager" width="1536" height="1024" decoding="async">
+          <img src="/assets/images/scultura-polistirolo.webp" alt="Scultura in polistirolo realizzata su misura" loading="lazy" width="1536" height="1024" decoding="async">
         </div>
         <div class="compact-copy">
           <h3>Sculture in polistirolo</h3>
@@ -476,12 +515,12 @@ footer{padding:35px 0;border-top:1px solid var(--line)}.foot{display:flex;justif
 </section>
 
 
-<section class="form-section" id="preventivo"><div class="wrap"><div class="section-head"><div><div class="kicker">Richiedi un preventivo</div><h2>Raccontaci cosa hai in mente.</h2></div></div><div class="minimum-reminder"><strong>Produzione peluche: minimo 500 pezzi</strong><span>Puoi richiedere un prototipo prima di confermare l’ordine.</span></div><form class="formbox" id="quoteForm" action="https://formsubmit.co/pelucheidea@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="return validateQuoteFiles()">
+<section class="form-section" id="preventivo"><div class="wrap"><div class="section-head"><div><div class="kicker">Richiedi un preventivo</div><h2>Raccontaci cosa hai in mente.</h2></div></div><p class="quote-guidance">Per una prima valutazione, indica soggetto, dimensioni, quantità prevista, uso del prodotto e data desiderata. Se hai un disegno, una foto o un logo, puoi allegarli qui sotto.</p><div class="minimum-reminder"><strong>Produzione peluche: minimo 500 pezzi</strong><span>Puoi richiedere un prototipo prima di confermare l’ordine.</span></div><form class="formbox" id="quoteForm" action="https://formsubmit.co/pelucheidea@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="return validateQuoteFiles()">
   <input type="hidden" name="_subject" value="Nuova richiesta preventivo — PelucheIdea">
   <input type="hidden" name="_template" value="table">
   <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://pelucheidea.com/?inviato=1#preventivo"><div class="formgrid"><div class="field"><label>Nome</label><input required name="nome" placeholder="Il tuo nome"></div><div class="field"><label>Email</label><input required type="email" name="email" placeholder="nome@azienda.it"></div><div class="field"><label>Da dove parti?</label><select id="startType" name="da_dove_parti"><option value="">Scegli il tuo punto di partenza</option><option>Ho già il progetto</option><option>Ho già il progetto - voglio richiedere direttamente il prototipo</option><option>Ho solo una bozza</option><option>Ho una foto e un&#39;idea</option></select></div><div class="field"><label>Tipo di prodotto</label><select name="tipo_prodotto"><option>Peluche personalizzato</option><option>Mascotte</option><option>Sculture in polistirolo</option><option>Non lo so ancora</option></select></div><div class="field full"><label>Raccontaci quello che hai</label><textarea name="messaggio" placeholder="Puoi descrivere il progetto, spiegare la bozza oppure raccontarci l&#39;idea che hai in mente..."></textarea></div><div class="field"><label for="allegatoFoto">Foto o disegno (facoltativo)</label><input id="allegatoFoto" type="file" name="attachment" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field"><label for="allegatoProgetto">Secondo allegato (facoltativo)</label><input id="allegatoProgetto" type="file" name="attachment2" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field full"><p class="upload-note">Puoi allegare immagini JPG, PNG, WebP o un PDF. Dimensione massima complessiva: 10 MB. Per file più grandi, <a href="https://wa.me/393793689420" target="_blank" rel="noopener noreferrer">scrivici su WhatsApp</a>.</p><p id="uploadError" class="upload-error" role="alert" hidden></p></div><div class="field full"><p class="privacy-note">Nome, email, descrizione ed eventuali allegati sono trasmessi tramite <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit</a> a PelucheIdea per rispondere alla tua richiesta di preventivo; non sono usati per newsletter. Non inserire dati sensibili. Per informazioni o richieste sui tuoi dati scrivi a <a href="mailto:pelucheidea@gmail.com">pelucheidea@gmail.com</a>.</p></div><div class="field full"><button class="btn primary" type="submit">Invia richiesta</button></div></div></form><div class="formbox quote-success" id="quoteSuccess" hidden><div class="success-icon">✓</div><div class="kicker">Richiesta inviata</div><h2>Grazie!</h2><p>Abbiamo ricevuto la tua richiesta. Appena possibile ti contatteremo per parlare del tuo progetto e dei prossimi passi.</p><div class="success-note">Controlla anche la tua email: potremmo ricontattarti lì per avere qualche dettaglio in più.</div><button class="btn secondary" type="button" onclick="resetQuoteForm()">Invia un&#39;altra richiesta</button></div></div></section>
-</main><footer><div class="wrap foot"><div><strong style="font-family:'Baloo 2';font-size:20px">PelucheIdea</strong> — La tua idea. Un peluche vero. <a href="/peluche-personalizzati/">Peluche</a> · <a href="/mascotte-personalizzate/">Mascotte</a> · <a href="/prototipo-peluche/">Prototipo</a> · <a href="/la-nostra-storia/">La nostra storia</a></div><div>© 2026 PelucheIdea · <a href="mailto:pelucheidea@gmail.com" style="color:inherit;text-decoration:none">pelucheidea@gmail.com</a> · <a href="tel:+393793689420" style="color:inherit;text-decoration:none" aria-label="Chiama PelucheIdea al 379 368 9420">379 368 9420</a> · Tutti i diritti riservati</div></div></footer><div class="privacy-banner" id="privacyBanner" role="region" aria-label="Scelta per il tracciamento" hidden><strong>Tracciamento pubblicitario</strong><p>Con il tuo permesso usiamo il tag Google Ads per misurare le visite e le richieste dal sito. Se rifiuti, il tag non viene caricato. Puoi cambiare scelta in qualsiasi momento. <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Come Google usa i dati</a>.</p><div class="privacy-actions"><button type="button" class="privacy-reject" data-privacy-choice="rejected">Rifiuta</button><button type="button" class="privacy-accept" data-privacy-choice="accepted">Accetta</button></div></div><script>
+  <input type="hidden" name="_next" value="https://pelucheidea.com/?inviato=1#preventivo"><div class="formgrid"><div class="field"><label for="quoteName">Nome</label><input id="quoteName" required name="nome" autocomplete="name" placeholder="Il tuo nome"></div><div class="field"><label for="quoteEmail">Email</label><input id="quoteEmail" required type="email" name="email" autocomplete="email" placeholder="nome@azienda.it"></div><div class="field"><label for="startType">Da dove parti?</label><select id="startType" name="da_dove_parti"><option value="">Scegli il tuo punto di partenza</option><option>Ho già il progetto</option><option>Ho già il progetto - voglio richiedere direttamente il prototipo</option><option>Ho solo una bozza</option><option>Ho una foto e un&#39;idea</option></select></div><div class="field"><label for="productType">Tipo di prodotto</label><select id="productType" name="tipo_prodotto"><option>Peluche personalizzato</option><option>Mascotte</option><option>Sculture in polistirolo</option><option>Non lo so ancora</option></select></div><div class="field full"><label for="quoteMessage">Raccontaci quello che hai</label><textarea id="quoteMessage" name="messaggio" placeholder="Descrivi soggetto, dimensioni, quantità, uso previsto e data desiderata. Puoi partire anche da una bozza o da una foto."></textarea></div><div class="field"><label for="allegatoFoto">Foto o disegno (facoltativo)</label><input id="allegatoFoto" type="file" name="attachment" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field"><label for="allegatoProgetto">Secondo allegato (facoltativo)</label><input id="allegatoProgetto" type="file" name="attachment2" accept="image/jpeg,image/png,image/webp,application/pdf"></div><div class="field full"><p class="upload-note">Puoi allegare immagini JPG, PNG, WebP o un PDF. Dimensione massima complessiva: 10 MB. Per file più grandi, <a href="https://wa.me/393793689420" target="_blank" rel="noopener noreferrer">scrivici su WhatsApp</a>.</p><p id="uploadError" class="upload-error" role="alert" hidden></p></div><div class="field full"><p class="privacy-note">Nome, email, descrizione ed eventuali allegati sono trasmessi tramite <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit</a> a PelucheIdea per rispondere alla tua richiesta di preventivo; non sono usati per newsletter. Non inserire dati sensibili. Per informazioni o richieste sui tuoi dati scrivi a <a href="mailto:pelucheidea@gmail.com">pelucheidea@gmail.com</a>.</p></div><div class="field full"><button class="btn primary" type="submit">Invia richiesta</button></div></div></form><div class="formbox quote-success" id="quoteSuccess" hidden><div class="success-icon">✓</div><div class="kicker">Richiesta inviata</div><h2>Grazie!</h2><p>Abbiamo ricevuto la tua richiesta. Appena possibile ti contatteremo per parlare del tuo progetto e dei prossimi passi.</p><div class="success-note">Controlla anche la tua email: potremmo ricontattarti lì per avere qualche dettaglio in più.</div><button class="btn secondary" type="button" onclick="resetQuoteForm()">Invia un&#39;altra richiesta</button></div></div></section>
+</main><footer><div class="wrap foot"><div><strong style="font-family:'Baloo 2';font-size:20px">PelucheIdea</strong> — La tua idea. Un peluche vero. <a href="/peluche-personalizzati/">Peluche</a> · <a href="/mascotte-personalizzate/">Mascotte</a> · <a href="/prototipo-peluche/">Prototipo</a> · <a href="/la-nostra-storia/">La nostra storia</a></div><div>© 2026 PelucheIdea · Roma · progetti in tutta Italia · <a href="mailto:pelucheidea@gmail.com" style="color:inherit;text-decoration:none">pelucheidea@gmail.com</a> · <a href="tel:+393793689420" style="color:inherit;text-decoration:none" aria-label="Chiama PelucheIdea al 379 368 9420">379 368 9420</a> · Tutti i diritti riservati</div></div></footer><div class="privacy-banner" id="privacyBanner" role="region" aria-label="Scelta per il tracciamento" hidden><strong>Tracciamento pubblicitario</strong><p>Con il tuo permesso usiamo il tag Google Ads per misurare le visite e le richieste dal sito. Se rifiuti, il tag non viene caricato. Puoi cambiare scelta in qualsiasi momento. <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">Come Google usa i dati</a>.</p><div class="privacy-actions"><button type="button" class="privacy-reject" data-privacy-choice="rejected">Rifiuta</button><button type="button" class="privacy-accept" data-privacy-choice="accepted">Accetta</button></div></div><script>
 (function(){
   var banner=document.getElementById('privacyBanner');
   var setting=document.createElement('button');
@@ -800,9 +839,9 @@ function setStart(value){
       <button class="page-modal-close" type="button" data-close-modal>×</button>
     </div>
     <div class="modal-portfolio">
-      <article class="portfolio-modal-card"><img src="/assets/images/peluche-con-logo.webp" alt="Esempio di peluche personalizzato con logo" loading="eager" width="881" height="887" decoding="async"><h3>Personaggi</h3><p>Dal tuo personaggio illustrato a un peluche tridimensionale.</p></article>
-      <article class="portfolio-modal-card"><img src="/assets/images/mascotte-con-logo.webp" alt="Esempio di mascotte personalizzata con logo" loading="eager" width="881" height="887" decoding="async"><h3>Brand e mascotte</h3><p>Logo e identità trasformati in una mascotte riconoscibile.</p></article>
-      <article class="portfolio-modal-card"><img src="/assets/images/scultura-polistirolo.webp" alt="Scultura in polistirolo realizzata su misura" loading="eager" width="1536" height="1024" decoding="async"><h3>Sculture in polistirolo</h3><p>Sculture e forme scenografiche realizzate su misura in polistirolo.</p></article>
+      <article class="portfolio-modal-card"><img src="/assets/images/peluche-con-logo.webp" alt="Esempio di peluche personalizzato con logo" loading="lazy" width="881" height="887" decoding="async"><h3>Personaggi</h3><p>Dal tuo personaggio illustrato a un peluche tridimensionale.</p></article>
+      <article class="portfolio-modal-card"><img src="/assets/images/mascotte-con-logo.webp" alt="Esempio di mascotte personalizzata con logo" loading="lazy" width="881" height="887" decoding="async"><h3>Brand e mascotte</h3><p>Logo e identità trasformati in una mascotte riconoscibile.</p></article>
+      <article class="portfolio-modal-card"><img src="/assets/images/scultura-polistirolo.webp" alt="Scultura in polistirolo realizzata su misura" loading="lazy" width="1536" height="1024" decoding="async"><h3>Sculture in polistirolo</h3><p>Sculture e forme scenografiche realizzate su misura in polistirolo.</p></article>
     </div>
     <div class="modal-cta"><a class="btn primary" href="#preventivo" data-close-modal>Raccontaci il tuo progetto →</a></div>
   </div>
@@ -935,5 +974,21 @@ function resetQuoteForm(){
   success.hidden=true;
   form.scrollIntoView({behavior:'smooth',block:'center'});
 }
+</script>
+<script>
+(function(){
+ const nav=document.getElementById('primaryNav');
+ const toggle=document.getElementById('mobileMenuToggle');
+ if(!nav||!toggle) return;
+ function setOpen(open){
+   document.querySelector('.nav').classList.toggle('mobile-open',open);
+   toggle.setAttribute('aria-expanded',String(open));
+   toggle.setAttribute('aria-label',open?'Chiudi menu':'Apri menu');
+ }
+ toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));
+ nav.addEventListener('click',event=>{if(event.target.closest('a,button')) setOpen(false);});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape') setOpen(false);});
+ window.addEventListener('resize',()=>{if(window.innerWidth>850) setOpen(false);});
+})();
 </script>
 </body></html>
