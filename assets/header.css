@@ -1,0 +1,12 @@
+/* One shared header layout on every page. */
+body>header{position:sticky;top:0;z-index:11000;background:#fff;border-bottom:1px solid #eee7ef;backdrop-filter:blur(16px)}
+body>header .wrap.nav{box-sizing:border-box;width:100%;max-width:1180px;margin:0 auto;min-height:78px;height:78px;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:nowrap;position:relative}
+body>header .logo{font:800 30px/1.4 'Baloo 2',sans-serif;letter-spacing:-1px;color:#29253d;text-decoration:none;flex-shrink:0}
+body>header .logo span{color:#f04885}
+body>header .nav nav{position:static;display:flex;align-items:center;justify-content:flex-start;flex-direction:row;flex-wrap:nowrap;gap:14px;padding:0;margin:0;overflow:visible;width:auto;max-width:none;border:0;border-radius:0;box-shadow:none;background:transparent}
+body>header .nav nav>a,body>header .nav nav>button{box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:40px;margin:0;padding:8px 0;border:0;border-radius:0;background:transparent;color:#29253d;font:700 14px/1.4 'Nunito',sans-serif;white-space:nowrap;text-decoration:none;transform:none;flex-shrink:0;cursor:pointer}
+body>header .nav nav>a:hover,body>header .nav nav>button:hover{color:#f04885;transform:none;text-decoration:none}
+body>header .navcta{box-sizing:border-box;flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;margin:0;padding:12px 20px;border:0;border-radius:999px;background:linear-gradient(135deg,#f04885,#7866dc);color:#29253d;font:700 14px/1.4 'Nunito',sans-serif;white-space:nowrap;text-decoration:none;box-shadow:0 9px 22px rgba(142,125,245,.20)}
+body>header .mobile-menu-toggle{display:none}
+@media(max-width:1100px){body>header .wrap.nav{height:126px;min-height:126px;flex-wrap:wrap;gap:0 16px}body>header .nav nav{order:3;width:100%;max-width:100%;height:48px;overflow-x:auto;overflow-y:hidden;flex-shrink:0;align-items:center;gap:18px}body>header .nav nav>a,body>header .nav nav>button{padding:8px 0;min-height:40px}body>header .navcta{margin-left:auto}}
+@media(max-width:560px){body>header .wrap.nav{padding:12px 17px}}
