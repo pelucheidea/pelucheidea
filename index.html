@@ -340,6 +340,13 @@ header .nav nav a,header .nav nav button{display:inline-flex;align-items:center;
 header .nav nav a:hover{transform:none}
 @media(max-width:1100px){header .nav nav{align-items:stretch}header .nav nav a,header .nav nav button{justify-content:flex-start;padding:12px 14px}}
 </style>
+<style id="persistent-header-menu">
+header{z-index:11000;background:#fff}
+.page-modal{top:var(--menu-bottom,78px);height:calc(100dvh - var(--menu-bottom,78px));padding:16px}
+.page-modal-box{max-height:calc(100dvh - var(--menu-bottom,78px) - 32px)}
+.start-chooser{top:calc(var(--menu-bottom,78px) + 8px)}
+.start-chooser-box{max-height:calc(100dvh - var(--menu-bottom,78px) - 24px)}
+</style>
 </head>
 <body>
 <header><div class="wrap nav"><a class="logo" href="#top">Peluche<span>Idea</span></a><nav id="primaryNav" aria-label="Navigazione principale">
@@ -944,9 +951,20 @@ function resetQuoteForm(){
    toggle.setAttribute('aria-label',open?'Chiudi menu':'Apri menu');
  }
  toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));
- nav.addEventListener('click',event=>{if(event.target.closest('a,button')) setOpen(false);});
+ // Keep navigation visible when a menu item is selected.
  document.addEventListener('keydown',event=>{if(event.key==='Escape') setOpen(false);});
- window.addEventListener('resize',()=>{if(window.innerWidth>850) setOpen(false);});
+ window.addEventListener('resize',()=>{if(window.innerWidth>1100) setOpen(false);});
 })();
 </script>
-</body></html>
+<script>
+(function(){
+ const header=document.querySelector('header');
+ const update=()=>document.documentElement.style.setProperty('--menu-bottom',Math.ceil(header.getBoundingClientRect().bottom)+'px');
+ new ResizeObserver(update).observe(header);
+ const nav=document.getElementById('primaryNav');
+ new MutationObserver(update).observe(document.querySelector('.nav'),{attributes:true,attributeFilter:['class']});
+ window.addEventListener('resize',update);update();
+ const section=new URLSearchParams(location.search).get('section');
+ if(section==='sicurezza') document.querySelector('[data-page-modal="sicurezzaModal"]').click();
+})();
+</script></body></html>
